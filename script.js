@@ -54,7 +54,7 @@ function updateActiveNav() {
 
 window.addEventListener('scroll', updateActiveNav);
 
-// ===== Scroll Reveal Animation - Subtle, one-time =====
+// ===== Scroll Reveal Animation - Subtle, one-time only =====
 const revealElements = document.querySelectorAll('.skill-card, .project-card, .cert-card, .softskill-card, .language-card');
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -76,7 +76,7 @@ revealElements.forEach(el => {
     revealObserver.observe(el);
 });
 
-// ===== Language Bar Animation =====
+// ===== Language Bar Animation - Subtle fill =====
 const languageBars = document.querySelectorAll('.language-fill');
 
 const barObserver = new IntersectionObserver((entries) => {
@@ -114,13 +114,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===== Console Welcome Message =====
-console.log('%cBishal Koirala — QA Engineer Portfolio', 'font-size: 14px; font-weight: 500; color: #0d9488;');
-console.log('%cOpen to collaborations and QA opportunities.', 'font-size: 11px; color: #6b6560;');
+console.log('%cBishal Koirala — QA Engineer Portfolio', 'font-size: 14px; font-weight: 500; color: #2A9D8F;');
+console.log('%cOpen to collaborations and QA opportunities.', 'font-size: 11px; color: #6B6560;');
 
 // ===== Accessibility: Respect reduced motion =====
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.style.setProperty('--transition', 'none');
-    document.querySelectorAll('.floating-badge').forEach(el => {
-        el.style.animation = 'none';
-    });
 }
